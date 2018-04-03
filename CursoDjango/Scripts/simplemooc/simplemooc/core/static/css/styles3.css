@@ -1,0 +1,21 @@
+
+.pure-u-r { 
+    display: table-cell;
+    vertical-align: left-side;    
+}
+.image, span {
+    display: table-cell;
+    vertical-align: left-side;
+}
+.image {
+   width: 50px;
+   float: left;
+   margin:0 0 10px 20px;
+}
+.text-align {
+	text-align: left;
+}
+.splash {
+	vertical-align:left;
+	text-align:left;
+}

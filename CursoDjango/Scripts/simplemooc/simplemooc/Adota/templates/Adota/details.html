@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/styles3.css' %}" />
+<div class="splash">
+	<div class="pure-g-r">
+		<div class="l-box splash-text">
+			<h1 class="splash-head">
+                 {{ Animal.name }}
+			</h1>
+			<div class="pure-u-1-3">
+				<h4> {% if Animal.image %}
+					<img width="400px" height="250px" src="{{ Animal.image.url }}" alt="{{ animal.name }}" />
+					{% else %}
+					<img src="{% static 'img/animal-image.jpeg' %}" alt="{{ animal.name }}" />
+					{% endif %}
+				</h4>
+			</div>
+				<div class="pure-u-1-3">
+					<h2 class="splash-subhead">
+						Descrição:  {{ Animal.description }}
+							<p></p>
+						Tipo: {{ Animal.get_tipo_display }}
+							<p></p>
+						Idade: {{ Animal.get_idade_display }}
+							<p></p>
+						Disponível desde: {{ Animal.disponivel }}
+							<p></p>
+						Contato: {{ Animal.contato }}
+							<p></p>
+					</h2>
+				</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
