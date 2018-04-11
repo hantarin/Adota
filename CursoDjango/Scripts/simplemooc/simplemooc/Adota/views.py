@@ -13,6 +13,22 @@ def index(request):
     }
     return render(request, template_name, context)
 
+def cao(request):
+    cao = Animal.objects.filter(tipo__equal = Cachorro)
+    template_name = 'Adota/cao.html'
+    context = {
+        'cao':cao
+    }
+    return render(request, template_name, context)
+
+def gato(request):
+    gato = Animal.objects.filter(tipo__icontains = 2)
+    template_name = 'Adota/gato.html'
+    context = {
+        'gato':gato
+    }
+    return render(request, template_name, context)
+
 
 
 

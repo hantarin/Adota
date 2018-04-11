@@ -1,0 +1,146 @@
+{% extends "base2.html" %}
+<!doctype html>
+{% load static %}
+{% block content %}
+
+     <link rel="stylesheet" href="{% static 'css/pricing.css' %}" />
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-" crossorigin="anonymous">
+
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-old-ie-min.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+        <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css">
+    <!--<![endif]-->
+
+
+        <!--[if lte IE 8]>
+            <link rel="stylesheet" href="css/layouts/pricing-old-ie.css">
+        <![endif]-->
+        <!--[if gt IE 8]><!-->
+            <link rel="stylesheet" href="css/layouts/pricing.css">
+        <!--<![endif]-->
+</head>
+<body>
+
+<div class="banner">
+    <h1 class="banner-head">
+        Adota WEB<br>
+        Não Compre ADOTE !
+    </h1>
+</div>
+
+<div class="l-content">
+    <div class="pricing-tables pure-g">
+        <div class="pure-u-1 pure-u-md-1-4">
+            <div class="pricing-table pricing-table-free">
+                <div class="pricing-table-header">
+                    <h2></h2>
+
+                    <span class="pricing-table-price">
+                     <a href="{% url 'accounts:login' %}">Login</a>
+                         <span>ja sou associado</span>
+                    </span>
+                </div>
+
+                <ul class="pricing-table-list">
+                    <li>Free setup</li>
+                    <li>Custom sub-domain</li>
+                    <li>Standard customer support</li>
+                    <li>1GB file storage</li>
+                    <li>1 database</li>
+                    <li>Unlimited bandwidth</li>
+                </ul>
+
+                <button class="button-choose pure-button">Choose</button>
+            </div>
+        </div>
+
+        <div class="pure-u-1 pure-u-md-1-4">
+            <div class="pricing-table pricing-table-enterprise">
+                <div class="pricing-table-header">
+                    <h2></h2>
+
+                    <span class="pricing-table-price">
+                        <a href="{% url 'accounts:register' %}">NOVO</a>
+                         <span>quero me associar</span>
+                    </span>
+                </div>
+
+                <ul class="pricing-table-list">
+                    <li>Free setup</li>
+                    <li>Use your own domain</li>
+                    <li>Premium customer support</li>
+                    <li>Unlimited file storage</li>
+                    <li>25 databases</li>
+                    <li>Unlimited bandwidth</li>
+                </ul>
+
+                <button class="button-choose pure-button">Choose</button>
+            </div>
+        </div>
+
+        <div class="pure-u-1 pure-u-md-1-4">
+            <div class="pricing-table pricing-table-biz pricing-table-selected">
+                <div class="pricing-table-header">
+                    <h2></h2>
+
+                    <span class="pricing-table-price">
+                      <a href="{% url 'Adota:cao' %}">CÃO</a>
+                        <span>quero adotar</span>
+                    </span>
+                </div>
+
+                <ul class="pricing-table-list">
+                    <li>Free setup</li>
+                    <li>Use your own domain</li>
+                    <li>Standard customer support</li>
+                    <li>10GB file storage</li>
+                    <li>5 databases</li>
+                    <li>Unlimited bandwidth</li>
+                </ul>
+
+                <button class="button-choose pure-button">Choose</button>
+            </div>
+        </div>
+
+        <div class="pure-u-1 pure-u-md-1-4">
+            <div class="pricing-table pricing-table-enterprise">
+                <div class="pricing-table-header">
+                    <h2></h2>
+
+                    <span class="pricing-table-price">
+                        <a href="{% url 'Adota:gato' %}">GATO</a>
+                         <span>QUERO ADOTAR</span>
+                    </span>
+                </div>
+
+                <ul class="pricing-table-list">
+                    <li>Free setup</li>
+                    <li>Use your own domain</li>
+                    <li>Premium customer support</li>
+                    <li>Unlimited file storage</li>
+                    <li>25 databases</li>
+                    <li>Unlimited bandwidth</li>
+                </ul>
+
+                <button class="button-choose pure-button">Choose</button>
+            </div>
+        </div>
+
+
+    </div> <!-- end pricing-tables -->
+
+    </div> <!-- end information -->
+</div> <!-- end l-content -->
+</body>
+</html>
+
+
+{% endblock %}

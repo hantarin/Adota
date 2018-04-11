@@ -4,6 +4,7 @@
 
 {% block content %}
 {% load_my_courses user as enrollments %}
+<div class="splash">
 <div class="pure-g-r content-ribbon">
     <div class="pure-u-1">
         <ul class="breadcrumb">
@@ -20,7 +21,7 @@
                 </li>
                 {% block menu_options %}
                 <li class="pure-menu-heading">Cursos</li>
-                {% for enrollment in enrollments %}
+                {% for animal in animals %}
                 <li>
                     <a href="{% url 'courses:announcements' enrollment.course.slug %}">
                     <i class="fa fa-book"></i>
@@ -28,7 +29,7 @@
                     </a>
                 </li>
                 {% empty %}
-                <li>Nenhum curso encontrado</li>
+                <li>Nenhum Animal encontrado</li>
                 {% endfor %}
                 <li class="pure-menu-heading">Configurações de Conta</li>
                 <li>
@@ -50,8 +51,8 @@
     <div class="pure-u-2-3">
         <div class="inner">
             {% block dashboard_content %}
-            <h2>Meus Cursos</h2>
-            {% for enrollment in enrollments %}
+            <h2>Meus Animais</h2>
+            {% for animal in animals %}
             <div class="well">
                 <h3>{{ enrollment.course }}
                 ({{ enrollment.course.start_date|date:'d/m/Y'|default:'Sem data' }})
@@ -64,11 +65,12 @@
             </div>
             {% empty %}
             <aside class="pure-u-1">
-                <p>Nenhum curso inscrito</p>
+                <p>Nenhum Animal Cadastrado</p>
             </aside>
             {% endfor %}
             {% endblock %}
         </div>
     </div>
+</div>
 </div>
 {% endblock %}

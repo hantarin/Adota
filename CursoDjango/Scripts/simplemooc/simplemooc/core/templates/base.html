@@ -29,8 +29,9 @@
             <li><a href="{% url 'Adota:index' %}">Animais</a></li>
 
             <li><a href="{% url 'core:contact' %}">Contato</a></li>
+            <li><a href="{% url 'core:contact' %}">Relatorios</a></li>
             {% if user.is_authenticated %}
-            <!--<li><a href="{% url 'accounts:dashboard' %}">Painel</a></li>-->
+            <li><a href="{% url 'accounts:dashboard' %}">Painel</a></li>
             <li><a href="{% url 'admin:index' %}">Cadastros</a></li>
             <li><a href="{% url 'accounts:logout' %}">Sair</a></li>
             {% else %}

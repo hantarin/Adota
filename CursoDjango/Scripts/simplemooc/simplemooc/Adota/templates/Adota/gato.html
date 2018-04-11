@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<div id="main">
+<div class="pure-g-r">
+    <div class="pure-u-1">
+        <div class="l-box">
+            <h4 class="content-subhead">Listagem de Animais no Adota Web</h4>
+            <p>Abaixo a lista de animais disponíveis na plataforma</p>
+        </div>
+    </div>
+</div>
+
+    {% for gato in gato %}
+
+
+ <div class="pure-u-r">
+    <div class="pure-g-r">
+        <div class="pure-u">
+            <div class="l-box">
+                   <a href="{{ animal.get_absolute_url }}">
+                   </a>
+             <div class="pure-u-7-8">
+                <a href="{{ animal.get_absolute_url }}" title="">{{ animal.name }}
+                </a>
+               {{ animal.description|linebreaks }}
+               <h2>
+                   {% if animal.image %}
+                <img width="400px" height="250px" src="{{ animal.image.url }}" alt="{{ animal.name }}" />
+                {% else %}
+                  <img width="400px" height="250px" src="{% static 'img/animal-image.jpeg' %}" alt="{{ animal.name }}" />
+                 </div>
+
+                       </div>
+                    {% endif %}
+                </h2>
+
+</div>
+            </div>
+            </div>
+            {% empty %}
+            <div class="pure-g-r content-ribbon">
+                <div class="pure-u-1">
+                    <div class="l-box">
+                        <p>Nenhum animal está disponível na plataforma</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+    </div>
+            {% endblock %}
+</div>
+
