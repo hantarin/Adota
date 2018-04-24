@@ -14,24 +14,26 @@
     </div>
 </div>
 
-    {% for gato in gato %}
 
+
+    {% for gato in gato %}
+{% if gato.tipo == 2%}
 
  <div class="pure-u-r">
     <div class="pure-g-r">
         <div class="pure-u">
             <div class="l-box">
-                   <a href="{{ animal.get_absolute_url }}">
+                   <a href="{{ gato.get_absolute_url }}">
                    </a>
              <div class="pure-u-7-8">
-                <a href="{{ animal.get_absolute_url }}" title="">{{ animal.name }}
+                <a href="{{ gato.get_absolute_url }}" title="">{{ gato.name }}
                 </a>
-               {{ animal.description|linebreaks }}
+               {{ gato.description|linebreaks }}
                <h2>
-                   {% if animal.image %}
-                <img width="400px" height="250px" src="{{ animal.image.url }}" alt="{{ animal.name }}" />
+                   {% if gato.image %}
+                <img width="400px" height="250px" src="{{ gato.image.url }}" alt="{{ gato.name }}" />
                 {% else %}
-                  <img width="400px" height="250px" src="{% static 'img/animal-image.jpeg' %}" alt="{{ animal.name }}" />
+                  <img width="400px" height="250px" src="{% static 'img/animal-image.jpeg' %}" alt="{{ gato.name }}" />
                  </div>
 
                        </div>
@@ -41,7 +43,9 @@
 </div>
             </div>
             </div>
+    {% endif %}
             {% empty %}
+
             <div class="pure-g-r content-ribbon">
                 <div class="pure-u-1">
                     <div class="l-box">
@@ -49,8 +53,12 @@
                     </div>
                 </div>
             </div>
+
             {% endfor %}
-    </div>
+
+</div>
+
+
             {% endblock %}
 </div>
 

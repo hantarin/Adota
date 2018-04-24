@@ -4,53 +4,85 @@
 
 {% block content %}
 
-<div id="main">
-<div class="pure-g-r">
-    <div class="pure-u-1">
-        <div class="l-box">
-            <h4 class="content-subhead">Listagem de Animais no Adota Web</h4>
-            <p>Abaixo a lista de animais disponíveis na plataforma</p>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+     <link rel="stylesheet" href="{% static 'css/pricing.css' %}" />
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-" crossorigin="anonymous">
+
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-old-ie-min.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+        <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css">
+    <!--<![endif]-->
+         <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A layout example with a side menu that hides on mobile, just like the Pure website.">
+    <title>Responsive Side Menu &ndash; Layout Examples &ndash; Pure</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="{% static 'css/ie.css' %}" />
+        <!--[if lte IE 8]>
+            <link rel="stylesheet" href="css/layouts/side-menu-old-ie.css">
+        <![endif]-->
+        <!--[if gt IE 8]><!-->
+    <link rel="stylesheet" href="{% static 'css/side-menu.css' %}" />
+        <!--<![endif]-->
+
+        <!--[if lte IE 8]>
+            <link rel="stylesheet" href="css/layouts/pricing-old-ie.css">
+        <![endif]-->
+        <!--[if gt IE 8]><!-->
+            <link rel="stylesheet" href="css/layouts/pricing.css">
+        <!--<![endif]-->
+<link rel="stylesheet" href="{% static 'css/styles3.css' %}" />
+</head>
+
+
+<div class="banner">
+    <h1 class="banner-head">
+        Adota WEB<br>
+        Não Compre ADOTE !
+    </h1>
+</div>
+
+<div class="row">
+    <div class="col-2">
+        <div class="list-group">
+             <ul class="list-group">
+                <li class="list-group-item d-flex justify-content-between align-items-left">
+                    Filtros
+                 </li>
+                <li class="list-group-item d-flex justify-content-between align-items-left">
+                    <a href="{% url 'Adota:gato' %}" class="pure-menu-link">Gato</a>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-left">
+                    <a href="{% url 'Adota:cao' %}" class="pure-menu-link">Cão</a>
+                </li>
+            </ul>
+         </div>
+    </div>
+
+  {% for animal in animal %}
+
+    <div class="col-3">
+        <div class="col-5">
+            <big><a href="{{ animal.get_absolute_url }}" title="">{{ animal.name }}</a></big>
+            <small>{{ animal.get_idade_display|linebreaks }}</small>
+            <img width="200px" height="200px" src="{{ animal.image.url }}" alt="{{ animal.name }}">
         </div>
     </div>
-</div>
+    {% endfor %}
+  </div>
 
-    {% for animal in animal %}
 
 
- <div class="pure-u-r">
-    <div class="pure-g-r">
-        <div class="pure-u">
-            <div class="l-box">
-                   <a href="{{ animal.get_absolute_url }}">
-                   </a>
-             <div class="pure-u-7-8">
-                <a href="{{ animal.get_absolute_url }}" title="">{{ animal.name }}
-                </a>
-               {{ animal.description|linebreaks }}
-               <h2>
-                   {% if animal.image %}
-                <img width="400px" height="250px" src="{{ animal.image.url }}" alt="{{ animal.name }}" />
-                {% else %}
-                  <img width="400px" height="250px" src="{% static 'img/animal-image.jpeg' %}" alt="{{ animal.name }}" />
-                 </div>
-
-                       </div>
-                    {% endif %}
-                </h2>
-
-</div>
-            </div>
-            </div>
-            {% empty %}
-            <div class="pure-g-r content-ribbon">
-                <div class="pure-u-1">
-                    <div class="l-box">
-                        <p>Nenhum animal está disponível na plataforma</p>
-                    </div>
-                </div>
-            </div>
-            {% endfor %}
-    </div>
-            {% endblock %}
-</div>
-
+<script src="{% static 'js/ui.js' %}"></script></body>
+{% endblock %}

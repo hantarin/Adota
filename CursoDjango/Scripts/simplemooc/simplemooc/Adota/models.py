@@ -10,7 +10,8 @@ class AnimalManager(models.Manager):
     def search(self, query):
         return self.get_queryset().filter(
             models.Q(name__icontains=query) | \
-            models.Q(description__icontains=query)
+            models.Q(description__icontains=query) | \
+            models.Q(tipo_icontains=query)
         )
 
 
@@ -40,11 +41,37 @@ class Animal(models.Model):
     )
     porte = models.IntegerField('Porte', max_length=10, choices=PORTE_CHOICES)
 
+    CASTRADO_CHOICES = (
+        (1, 'Sim'),
+        (2, 'Não')
+    )
+    castrado = models.IntegerField('Castrado ?', max_length=10, choices=CASTRADO_CHOICES)
+
+    VERMIFUGADO_CHOICES = (
+        (1, 'Sim'),
+        (2, 'Não')
+    )
+    vermifugado = models.IntegerField('Vermifugado ?', max_length=10, choices=VERMIFUGADO_CHOICES)
+
+    VACINADO_CHOICES = (
+        (1, 'Sim'),
+        (2, 'Não')
+    )
+    vacinado = models.IntegerField('Vacinado ?', max_length=10, choices=VACINADO_CHOICES)
+
+    COMPORTAMENTO_CHOICES = (
+        (1, 'Dócil'),
+        (2, 'Agitado'),
+        (3, 'Agressivo')
+    )
+    comportamento = models.IntegerField('Dicas do comportamento', max_length=10, choices=COMPORTAMENTO_CHOICES)
+
+
     raça = models.CharField('Raça', max_length=20)
     description = models.TextField('Descrição do Animal', blank=True)
     image = models.ImageField(
         upload_to='Adota/images', verbose_name='Foto perfil',
-        null=True, blank=True
+        null=False, blank=False
     )
     imagebook1 = models.ImageField(
         upload_to='Adota/images', verbose_name='Foto album',
@@ -63,7 +90,7 @@ class Animal(models.Model):
         (1, 'Ativo'),
         (2, 'Adotado')
     )
-    status = models.IntegerField('Situação', choices=ATIVO_CHOICES, default=1, blank=True, editable=False)
+    status = models.IntegerField('Situação', choices=ATIVO_CHOICES, default=1, blank=True)
 ##    ativo = models.BooleanField('Situação',choices = ATIVO_CHOICES)
     contato = models.CharField('Contato para adoção: ', max_length=15)
     created_at = models.DateTimeField('Criado em', auto_now_add=True)

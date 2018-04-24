@@ -1,4 +1,4 @@
-{% extends "base2.html" %}
+{% extends "base.html" %}
 <!doctype html>
 {% load static %}
 {% block content %}
@@ -38,7 +38,7 @@
 
 <div class="l-content">
     <div class="pricing-tables pure-g">
-        <div class="pure-u-1 pure-u-md-1-4">
+        <div class="pure-u-1 pure-u-md-1-3">
             <div class="pricing-table pricing-table-free">
                 <div class="pricing-table-header">
                     <h2></h2>
@@ -62,31 +62,7 @@
             </div>
         </div>
 
-        <div class="pure-u-1 pure-u-md-1-4">
-            <div class="pricing-table pricing-table-enterprise">
-                <div class="pricing-table-header">
-                    <h2></h2>
-
-                    <span class="pricing-table-price">
-                        <a href="{% url 'accounts:register' %}">NOVO</a>
-                         <span>quero me associar</span>
-                    </span>
-                </div>
-
-                <ul class="pricing-table-list">
-                    <li>Free setup</li>
-                    <li>Use your own domain</li>
-                    <li>Premium customer support</li>
-                    <li>Unlimited file storage</li>
-                    <li>25 databases</li>
-                    <li>Unlimited bandwidth</li>
-                </ul>
-
-                <button class="button-choose pure-button">Choose</button>
-            </div>
-        </div>
-
-        <div class="pure-u-1 pure-u-md-1-4">
+        <div class="pure-u-1 pure-u-md-1-3">
             <div class="pricing-table pricing-table-biz pricing-table-selected">
                 <div class="pricing-table-header">
                     <h2></h2>
@@ -110,7 +86,7 @@
             </div>
         </div>
 
-        <div class="pure-u-1 pure-u-md-1-4">
+        <div class="pure-u-1 pure-u-md-1-3">
             <div class="pricing-table pricing-table-enterprise">
                 <div class="pricing-table-header">
                     <h2></h2>

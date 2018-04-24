@@ -14,7 +14,7 @@ def index(request):
     return render(request, template_name, context)
 
 def cao(request):
-    cao = Animal.objects.filter(tipo__equal = Cachorro)
+    cao = Animal.objects.all()
     template_name = 'Adota/cao.html'
     context = {
         'cao':cao
@@ -22,7 +22,7 @@ def cao(request):
     return render(request, template_name, context)
 
 def gato(request):
-    gato = Animal.objects.filter(tipo__icontains = 2)
+    gato = Animal.objects.all()
     template_name = 'Adota/gato.html'
     context = {
         'gato':gato
@@ -35,7 +35,8 @@ def gato(request):
 def details(request, slug):
     animal = get_object_or_404(Animal, slug=slug)
     context = {}
-
     context['Animal'] = animal
     template_name = 'Adota/details.html'
     return render(request, template_name, context)
+
+

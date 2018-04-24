@@ -2,6 +2,7 @@ body {
     color: #777;
 }
 
+
 .pure-img-responsive {
     max-width: 100%;
     height: auto;
@@ -24,6 +25,7 @@ Add transition to containers so they can push in and out.
 This is the parent `<div>` that contains the menu and the content area.
 */
 #layout {
+    top: relative;
     position: relative;
     left: 0;
     padding-left: 0;
@@ -82,23 +84,23 @@ appears on the left side of the page.
 #menu {
     margin-left: -150px; /* "#menu" width */
     width: 150px;
-    position: fixed;
-    top: 0;
+    top:0;
     left: 0;
     bottom: 0;
-    z-index: 1000; /* so the menu or its navicon stays above all content */
-    background: #191818;
+    background: #9e9a9c;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
 }
     /*
     All anchors inside the menu should be styled like this.
     */
-    #menu a {
+     #menu a {
         color: #999;
         border: none;
         padding: 0.6em 0 0.6em 0.6em;
     }
+
+    /*
 
     /*
     Remove all background/borders, since we are applying them to #menu.
@@ -129,7 +131,7 @@ appears on the left side of the page.
     */
     #menu .pure-menu-selected,
     #menu .pure-menu-heading {
-        background: #1f8dd6;
+        background: #417690;
     }
         /*
         This styles a link within a selected menu item `<li>`.
@@ -139,6 +141,9 @@ appears on the left side of the page.
         }
 
     /*
+    This styles the menu heading.
+    */
+/*
     This styles the menu heading.
     */
     #menu .pure-menu-heading {

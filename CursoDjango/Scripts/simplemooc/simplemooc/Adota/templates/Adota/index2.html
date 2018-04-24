@@ -14,25 +14,26 @@
     </div>
 </div>
 
-    {% for cao in cao %}
 
-{% if cao.tipo == 1%}
+
+    {% for animal in animal %}
+
 
  <div class="pure-u-r">
     <div class="pure-g-r">
         <div class="pure-u">
             <div class="l-box">
-                   <a href="{{ cao.get_absolute_url }}">
+                   <a href="{{ animal.get_absolute_url }}">
                    </a>
              <div class="pure-u-7-8">
-                <a href="{{ cao.get_absolute_url }}" title="">{{ cao.name }}
+                <a href="{{ animal.get_absolute_url }}" title="">{{ animal.name }}
                 </a>
-               {{ cao.description|linebreaks }}
+               {{ animal.description|linebreaks }}
                <h2>
-                   {% if cao.image %}
-                <img width="400px" height="250px" src="{{ cao.image.url }}" alt="{{ cao.name }}" />
+                   {% if animal.image %}
+                <img width="400px" height="250px" src="{{ animal.image.url }}" alt="{{ animal.name }}" />
                 {% else %}
-                  <img width="400px" height="250px" src="{% static 'img/animal-image.jpeg' %}" alt="{{ cao.name }}" />
+                  <img width="400px" height="250px" src="{% static 'img/animal-image.jpeg' %}" alt="{{ animal.name }}" />
                  </div>
 
                        </div>
@@ -42,7 +43,6 @@
 </div>
             </div>
             </div>
-    {% endif %}
             {% empty %}
             <div class="pure-g-r content-ribbon">
                 <div class="pure-u-1">
